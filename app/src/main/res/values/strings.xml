@@ -1,0 +1,13 @@
+<resources>
+	<string name="app_name">ANDROID-TESTING</string>
+	<string name="specialty_list_caption">Список специальностей</string>
+	<string name="worker_list_caption">Специальность : %1$s</string>
+	<string name="worker_birthday">Дата рождения</string>
+	<string name="worker_last_name">Фамилия</string>
+	<string name="worker_first_name">Имя</string>
+	<string name="worker_age">Возраст</string>
+	<string name="worker_specialty">Специальность</string>
+	<string name="data_loading_error">Ошибка при загрузке данных</string>
+	<string name="data_loading_retry_action">Повторить</string>
+	<string name="data_loading_link">http://gitlab.65apps.com/65gb/static/raw/master/testTask.json</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/nav_graph"
+	app:startDestination="@id/specialtyListFragment">
+
+	<activity
+		android:id="@+id/mainActivity"
+		android:name="com.testing.android.android_testing.MainActivity"
+		android:label="activity_main"
+		tools:layout="@layout/activity_main" />
+	<fragment
+		android:id="@+id/specialtyListFragment"
+		android:name="com.testing.android.android_testing.fragments.specialty.SpecialtyListFragment"
+		android:label="SpecialtyListFragment" >
+		<action
+			android:id="@+id/action_specialtyListFragment_to_specialtyFragment"
+			app:destination="@id/workerListFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/workerListFragment"
+		android:name="com.testing.android.android_testing.fragments.specialty.WorkerListFragment"
+		android:label="WorkerListFragment">
+		<action
+			android:id="@+id/action_specialtyFragment_to_workerFragment"
+			app:destination="@id/workerFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/workerFragment"
+		android:name="com.testing.android.android_testing.fragments.worker.WorkerFragment"
+		android:label="WorkerFragment" />
+</navigation>

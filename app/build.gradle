@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.testing.android.android_testing"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    def room_version = "2.1.0-alpha01"
+    def android_lifecycle_version = '2.0.0'
+    def leak_canary_version = '1.5.4'
+    def volley_version = '1.1.1'
+    def nav_version = "1.0.0-alpha06"
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:$android_lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$android_lifecycle_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation "android.arch.navigation:navigation-fragment:$nav_version"
+    implementation "android.arch.navigation:navigation-ui:$nav_version"
+
+
+    implementation('com.googlecode.json-simple:json-simple:1.1.1') {
+        exclude group: 'junit', module: 'junit'
+    }
+    implementation 'com.android.volley:volley:' + volley_version
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leak_canary_version"
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+}
